@@ -39,6 +39,25 @@ def call(Closure context) {
     context.delegate = config
     context()
 
+    properties([
+        parameters([
+        [$class: 'ExtensibleChoiceParameterDefinition', choiceListProvider:
+          [$class: 'TextareaChoiceListProvider',
+            addEditedValue: false,
+            choiceListText: '''https://staging-api.kernelci.org\nhttps://api.kernelci.org'''],
+            description: 'URL of the KernelCI backend API',
+            editable: true,
+            name: 'KCI_API_URL'],
+        [$class: 'ExtensibleChoiceParameterDefinition', choiceListProvider:
+          [$class: 'TextareaChoiceListProvider',
+            addEditedValue: false,
+            choiceListText: '''Staging KernelCI API Token\nKernelCI Upload API Token'''],
+            description: 'Identifier of the KernelCI backend API token stored in Jenkins',
+            editable: true,
+            name: 'KCI_TOKEN_ID']
+        ])
+    ])
+
     def name = config.name
     def kernel_arch = config.archList
     def debian_arch =  ["armhf": "armhf",

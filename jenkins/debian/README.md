@@ -14,6 +14,7 @@ At least the following Jenkins plugins must be installed:
 - [pipeline](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin)
 - [docker pipeline](http://wiki.jenkins-ci.org/display/JENKINS/Docker+Pipeline+Plugin)
 - [version number](https://wiki.jenkins-ci.org/display/JENKINS/Version+Number+Plugin)
+- [Extensible Choice Parameter](https://wiki.jenkins.io/display/JENKINS/Extensible+Choice+Parameter+plugin)
 
 debos also needs the kvm module loaded by the build host.
 
